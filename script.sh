@@ -1,5 +1,5 @@
 #!/bin/bash
-files="./test_dir/communes-01-ain-copy.geojson"
+files="./departements/*/communes-*"
 
 for file in $files; 
 do 
