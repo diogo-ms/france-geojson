@@ -1,5 +1,5 @@
 #!/bin/bash
-files="./departements/*/communes-*"
+files="./regions/*/departements-*"
 
 for file in $files; 
 do 
