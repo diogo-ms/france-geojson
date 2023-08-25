@@ -1,9 +1,9 @@
 #!/bin/bash
-files="./regions/*/departements-*"
+files="./*/communes-*.geojson"
 
 for file in $files; 
 do 
-    echo "greping... $file" 
+    echo "greping $file, replacing 'nom' to 'name'" 
     grep -rl "nom" $file | xargs sed -i 's/nom/name/g' 
     echo "correctly formatting .geojson files" 
     cat $file | jq -c '.features[] |= (.id = .properties.code | del(.properties.code))' >$file.tmp 
